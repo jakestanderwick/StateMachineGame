@@ -5,15 +5,15 @@ m_ProjectFiles:
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 637667156565167911
-    m_Hash: 3260813266
+      ticks: 637667158685605022
+    m_Hash: 1515978315
   m_LockFileStatus:
     m_FilePath: E:/GIMM/400/StateMachineGame/StateMachineGame/Packages/packages-lock.json
     m_PathExists: 1
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 637667156583909862
+      ticks: 637667159033227127
     m_Hash: 810176601
 m_EmbeddedPackageManifests:
   m_ManifestsStatus: {}

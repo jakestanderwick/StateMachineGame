@@ -24,10 +24,10 @@ public class EnemyBase : MonoBehaviour
         Vector3 spot;
         spot = new Vector3(spawns[whichSpawn].transform.position.x, 0, spawns[whichSpawn].transform.position.z);
         agent.destination = spot;
-        print("My destination is " + spawns[whichSpawn].name);
-        print("Spot = " + spot);
+       // print("My destination is " + spawns[whichSpawn].name);
+        //print("Spot = " + spot);
         float distance = Vector3.Distance(agent.gameObject.transform.position, spot);
-        print(distance);
+        //print(distance);
         if(distance <= 2)
         {
             timer++;
