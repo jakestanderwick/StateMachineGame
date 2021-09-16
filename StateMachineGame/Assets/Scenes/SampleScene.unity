@@ -3940,7 +3940,7 @@ GameObject:
   - component: {fileID: 397071332}
   - component: {fileID: 397071331}
   m_Layer: 0
-  m_Name: Rabbit (1)
+  m_Name: carrot
   m_TagString: rabbit
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6481,7 +6481,7 @@ GameObject:
   - component: {fileID: 672534720}
   - component: {fileID: 672534719}
   m_Layer: 0
-  m_Name: Rabbit (4)
+  m_Name: carrot
   m_TagString: rabbit
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8531,7 +8531,7 @@ GameObject:
   - component: {fileID: 770077400}
   - component: {fileID: 770077399}
   m_Layer: 0
-  m_Name: Rabbit (3)
+  m_Name: carrot
   m_TagString: rabbit
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8968,7 +8968,7 @@ GameObject:
   - component: {fileID: 826200950}
   - component: {fileID: 826200949}
   m_Layer: 0
-  m_Name: Rabbit (2)
+  m_Name: carrot
   m_TagString: rabbit
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -14739,6 +14739,7 @@ GameObject:
   - component: {fileID: 1425990630}
   - component: {fileID: 1425990629}
   - component: {fileID: 1425990628}
+  - component: {fileID: 1425990634}
   m_Layer: 0
   m_Name: enemy (1)
   m_TagString: Untagged
@@ -14940,6 +14941,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1425990634
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1425990627}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a38629271a54aeb459c5088b8686dda5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1449883353 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8699085668753703152, guid: e716b6114c68dd647b259a10c8a1635d, type: 3}
