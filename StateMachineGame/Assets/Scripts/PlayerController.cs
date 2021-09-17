@@ -29,16 +29,5 @@ public class PlayerController : MonoBehaviour
         }
         charController.Move(movementVector * moveSpeed * Time.deltaTime);
     }
-    private void OnTriggerEnter(Collider other)
-    {
-        print(other.gameObject.tag);
-        if (other.gameObject.tag == "rabbit")
-        {
-            carrot = other.gameObject;
-            
-            int rand = Random.Range(0, carrotSpawnLocations.Length);
-            Vector3 spawnLoc = new Vector3(carrotSpawnLocations[rand].transform.position.x, carrot.transform.position.y, carrotSpawnLocations[rand].transform.position.z);
-            carrot.transform.position = spawnLoc;
-        }
-    }
+    
 }

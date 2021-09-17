@@ -58,12 +58,16 @@
   <ItemGroup>
     <Compile Include="Assets\Scripts\EnemyBase.cs" />
     <Compile Include="Assets\Scripts\CameraFollow.cs" />
+    <Compile Include="Assets\Scripts\State Machine and States\State.cs" />
     <Compile Include="Assets\Scripts\EnemyAgent1.cs" />
     <Compile Include="Assets\Scripts\PlayerController.cs" />
-    <Compile Include="Assets\Scripts\State Machine and States\State.cs" />
+    <Compile Include="Assets\Scripts\State Machine and States\ChaseState.cs" />
     <Compile Include="Assets\Scripts\State Machine and States\StateController.cs" />
     <Compile Include="Assets\Scripts\State Machine and States\WanderState.cs" />
-    <Compile Include="Assets\Scripts\State Machine and States\ChaseState.cs" />
+    <Compile Include="Assets\Scripts\State Machine and States\SamWanderState.cs" />
+    <Compile Include="Assets\Scripts\State Machine and States\SamChaseState.cs" />
+    <Compile Include="Assets\Scripts\EnemyDetectionSphere.cs" />
+    <Compile Include="Assets\Scripts\Carrot.cs" />
   </ItemGroup>
   <ItemGroup>
      <None Include="Assets\Mats\invisBeforeQuad.shader" />
