@@ -5,13 +5,21 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     public CharacterController charController;
+    public GameManager gm;
     public float moveSpeed = 12;
+    public float moveSpeedAtLevel2 = 15;
+    public float moveSpeedAtLevel3 = 15;
     public float turnSpeed = 0.05f;
     public Transform characterBody;
     public Transform[] carrotSpawnLocations;
     private GameObject carrot;
-
+    public GameObject attackRadius;
+    public GameObject objInRadius = null;
     // Update is called once per frame
+    private void Start()
+    {
+        
+    }
     void Update()
     {
         float x = Input.GetAxis("Horizontal");
@@ -19,6 +27,12 @@ public class PlayerController : MonoBehaviour
 
         Vector3 movementVector = transform.forward * z;
         Vector3 turnVector = transform.right * x;
+
+        if(gm.playerLevel == 2)
+        {
+            moveSpeed = moveSpeedAtLevel2;
+        }
+        if (gm.playerLevel == 3) moveSpeed = moveSpeedAtLevel3;
         if (Input.GetKey(KeyCode.A))
         {
             transform.Rotate(0, -turnSpeed * Time.deltaTime, 0);
@@ -28,17 +42,19 @@ public class PlayerController : MonoBehaviour
             transform.Rotate(0, turnSpeed * Time.deltaTime, 0);
         }
         charController.Move(movementVector * moveSpeed * Time.deltaTime);
-    }
-    private void OnTriggerEnter(Collider other)
-    {
-        print(other.gameObject.tag);
-        if (other.gameObject.tag == "rabbit")
+
+        if(gm.playerLevel > 1)
         {
-            carrot = other.gameObject;
-            
-            int rand = Random.Range(0, carrotSpawnLocations.Length);
-            Vector3 spawnLoc = new Vector3(carrotSpawnLocations[rand].transform.position.x, carrot.transform.position.y, carrotSpawnLocations[rand].transform.position.z);
-            carrot.transform.position = spawnLoc;
+            if (Input.GetButtonUp("Jump")) Attack(objInRadius);
+        }
+        
+    }
+    
+    private void Attack(GameObject go)
+    {
+        if(go.tag == "rabbit")
+        {
+            Destroy(go);
         }
     }
 }
