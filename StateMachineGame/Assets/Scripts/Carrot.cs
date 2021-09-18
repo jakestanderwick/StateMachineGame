@@ -5,14 +5,21 @@ using UnityEngine;
 public class Carrot : MonoBehaviour
 {
     public PlayerController pc;
+    public GameManager gm;
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.tag == "player" || other.gameObject.tag == "rabbit")
+        if (other.gameObject.tag == "player")
         {
 
-            int rand = Random.Range(0, pc.carrotSpawnLocations.Length);
-            Vector3 spawnLoc = new Vector3(pc.carrotSpawnLocations[rand].transform.position.x, transform.position.y, pc.carrotSpawnLocations[rand].transform.position.z);
+            Vector3 spawnLoc;
+            spawnLoc = gm.PickNewCarrotSpawn(other.gameObject);
             transform.position = spawnLoc;
+        }
+        if(other.gameObject.tag == "rabbit")
+        {
+            Vector3 spawnLoc = gm.PickNewCarrotSpawn(other.gameObject);
+            transform.position = spawnLoc;
+            gm.rabbitPickedUpCarrot(other.gameObject.GetComponent<StateController>());
         }
     }
 }

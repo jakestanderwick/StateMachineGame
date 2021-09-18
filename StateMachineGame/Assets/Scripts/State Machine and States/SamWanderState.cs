@@ -10,10 +10,12 @@ public class SamWanderState : State
         stateController.SetName();
         stateController.maxSpawns = stateController.spawns.Length;
         stateController.SetNewSpawnToWanderTo();
+        
     }
 
     public override void Act()
     {
+        if (stateController.rabbitLevel > 1) stateController.agent.speed = 8;
         Vector3 spot;
         spot = new Vector3(stateController.spawns[stateController.whichSpawn].transform.position.x, 0, stateController.spawns[stateController.whichSpawn].transform.position.z);
         stateController.agent.destination = spot;
