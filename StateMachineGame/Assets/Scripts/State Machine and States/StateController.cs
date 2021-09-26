@@ -12,8 +12,11 @@ public class StateController : MonoBehaviour
     public int whichSpawn;
     public int timer = 0;
 
-    public bool samsWanderState = true;
+    public bool samsWanderState = false;
     public bool samsChaseState = false;
+
+    public bool jakesWanderState = false;
+    public bool jakesChaseState = false;
     //ATTENTION
     /*
     I recommend placing bools in here so we can switch between who's state machine we are using. It is a lot easier
@@ -35,6 +38,8 @@ public class StateController : MonoBehaviour
         if (samsWanderState) SetState(new SamWanderState(this));
         if (samsChaseState) SetState(new SamChaseState(this));
         //set the starting state to whatever is toggled.
+        if (jakesWanderState) SetState(new JakeWanderState(this));
+        if (jakesChaseState) SetState(new JakeWanderState(this));
 
     }
 

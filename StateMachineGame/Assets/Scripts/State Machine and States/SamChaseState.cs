@@ -36,7 +36,7 @@ public class SamChaseState : State
         spot = new Vector3(target.transform.position.x, 0, target.transform.position.z);
 
         float distance = Vector3.Distance(stateController.agent.gameObject.transform.position, spot);
-        Debug.Log(distance);
+        //Debug.Log(distance);
         if (distance >= 10)
         {
             stateController.SetState(new SamWanderState(stateController));
