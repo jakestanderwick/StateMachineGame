@@ -5,13 +5,25 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
-    path: Assets/Scenes/Start.unity
+  - enabled: 0
+    path: Assets/Scenes/crapStart.unity
     guid: 50fad82cdea81d3488044ad94025395a
   - enabled: 1
     path: Assets/Scenes/SampleScene.unity
     guid: 9fc0d4010bbf28b4594072e72b8655ab
+  - enabled: 0
+    path: Assets/Scenes/crapEnd.unity
+    guid: e37c933285122734aab8e2ab4dca5fdc
+  - enabled: 0
+    path: Assets/Scenes/crapWin.unity
+    guid: fcdaaeac1e82da642b2aa7ef46d007ec
   - enabled: 1
     path: Assets/Scenes/End.unity
-    guid: e37c933285122734aab8e2ab4dca5fdc
+    guid: 0ddc5aebcfcbeb74290d0b201f5a5976
+  - enabled: 1
+    path: Assets/Scenes/Start.unity
+    guid: 8e4f57e9c13fd9047b413489124acc18
+  - enabled: 1
+    path: Assets/Scenes/Win.unity
+    guid: ac2c852cffb7c6b46958295087ae8b01
   m_configObjects: {}

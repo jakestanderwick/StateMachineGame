@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour
 {
@@ -15,6 +16,7 @@ public class PlayerController : MonoBehaviour
     private GameObject carrot;
     public GameObject attackRadius;
     public GameObject objInRadius = null;
+    private int rabbitsKilled = 0;
     // Update is called once per frame
     private void Start()
     {
@@ -47,7 +49,10 @@ public class PlayerController : MonoBehaviour
         {
             if (Input.GetButtonUp("Jump")) Attack(objInRadius);
         }
-        
+        if(rabbitsKilled >= 6)
+        {
+            SceneManager.LoadScene("Win");
+        }
     }
     
     private void Attack(GameObject go)
@@ -55,6 +60,7 @@ public class PlayerController : MonoBehaviour
         if(go.tag == "rabbit")
         {
             Destroy(go);
+            rabbitsKilled++;
         }
     }
 }

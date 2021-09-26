@@ -6,6 +6,8 @@ public class Carrot : MonoBehaviour
 {
     public PlayerController pc;
     public GameManager gm;
+    public AudioClip munch;
+    public AudioSource aS;
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.tag == "player")
@@ -14,6 +16,7 @@ public class Carrot : MonoBehaviour
             Vector3 spawnLoc;
             spawnLoc = gm.PickNewCarrotSpawn(other.gameObject);
             transform.position = spawnLoc;
+            aS.PlayOneShot(munch);
         }
         if(other.gameObject.tag == "rabbit")
         {

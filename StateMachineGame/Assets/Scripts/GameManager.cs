@@ -15,6 +15,8 @@ public class GameManager : MonoBehaviour
     public int deathTimer = 0;
     public int playerLives = 3;
     public Text livesText;
+    public AudioSource aSource;
+    public AudioClip levelUpSound;
 
     Vector3 playerRespawn = new Vector3(0,1,7);
 
@@ -70,10 +72,12 @@ public class GameManager : MonoBehaviour
         if(playerCarrotsCollected >= 3)
         {
             playerLevel = 2;
+            aSource.PlayOneShot(levelUpSound);
         }
         if(playerCarrotsCollected >= 6)
         {
             playerLevel = 3;
+            aSource.PlayOneShot(levelUpSound);
         }
     }
     public void CheckRabbitLevelUp(StateController sc)
