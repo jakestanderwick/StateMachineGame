@@ -31,7 +31,7 @@ public class StateController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
+        
         if (samsWanderState) SetState(new SamWanderState(this));
         if (samsChaseState) SetState(new SamChaseState(this));
         //set the starting state to whatever is toggled.
@@ -61,6 +61,7 @@ public class StateController : MonoBehaviour
     {
         //a way to patrol to random points.
         whichSpawn = Random.Range(0, maxSpawns);
+        Debug.Log(maxSpawns);
     }
 
     public void DetectionSphereTriggerHandler(GameObject go)
