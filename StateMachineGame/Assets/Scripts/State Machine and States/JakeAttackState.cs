@@ -42,7 +42,7 @@ public class JakeAttackState : State
             //teleportSpot = new Vector3(stateController.agent.transform.position.x, 5 ,stateController.agent.transform.position.z);
             //Debug.Log(teleportTimer);
             //Debug.Log(teleportSpot);
-            if(attackTimer >= 500)
+            if(attackTimer >= 70)
             {
                 stateController.objInRadius.SetActive(false);
                 canTransit = true;

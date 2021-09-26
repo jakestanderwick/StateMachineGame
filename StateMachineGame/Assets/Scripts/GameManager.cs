@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
@@ -11,12 +13,17 @@ public class GameManager : MonoBehaviour
     private GameObject playerToInstant;
     private Vector3 playerSpawnLoc;
     public int deathTimer = 0;
+    public int playerLives = 3;
+    public Text livesText;
+
+    Vector3 playerRespawn = new Vector3(0,1,7);
 
     // Start is called before the first frame update
     void Start()
     {
         playerSpawnLoc = player.transform.position;
         playerToInstant = player;
+        livesText.text = "Remaining Lives: " + playerLives;
     }
 
     // Update is called once per frame
@@ -25,13 +32,21 @@ public class GameManager : MonoBehaviour
         //checks for death. could be moved into a new method if we wanted it to.
         if(!player.activeInHierarchy)
         {
-            if (deathTimer >= 200)
+            if (deathTimer >= 300)
             {
+                player.transform.position = playerRespawn;
                 player.SetActive(true);
+                playerLives--;
+                livesText.text = "Remaining Lives: " + playerLives;
             }
             deathTimer++;
         }
         else deathTimer = 0;
+
+        if(playerLives <= 0)
+        {
+            SceneManager.LoadScene("End");
+        }
     }
 
     public Vector3 PickNewCarrotSpawn(GameObject go)
@@ -52,11 +67,11 @@ public class GameManager : MonoBehaviour
     }
     public void CheckPlayerLevelUp()
     {
-        if(playerCarrotsCollected > 4)
+        if(playerCarrotsCollected >= 3)
         {
             playerLevel = 2;
         }
-        if(playerCarrotsCollected > 9)
+        if(playerCarrotsCollected >= 6)
         {
             playerLevel = 3;
         }
