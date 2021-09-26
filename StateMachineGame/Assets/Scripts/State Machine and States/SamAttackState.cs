@@ -34,7 +34,7 @@ public class SamAttackState : State
         //then exits the state.
         if(stateController.objInRadius.tag == "player")
         {
-            if(attackTimer >= 500)
+            if(attackTimer >= 200)
             {
                 stateController.objInRadius.SetActive(false);
                 canTransit = true;
